@@ -1,6 +1,6 @@
 # SPEC — Frogger: integración core del juego
 
-> **Estado:** Propuesto
+> **Estado:** Aprobado
 > **Depende de:** 06-games-table-leaderboard-supabase
 > **Fecha:** 2026-05-20
 > **Objetivo:** Integrar Frogger (canvas puro, construido desde cero) como juego jugable en Arcade Vault con ID `frogger`, conectando score, vidas, nivel y game over con el HUD React y la play-page dedicada.
@@ -53,7 +53,7 @@ VALUES (
   'Guía a tu rana a través de una carretera repleta de coches y un río de troncos y tortugas flotantes. Llena las cinco bocas del otro lado para completar la ronda; cada nivel acelera el tráfico y acorta el tiempo. Tres vidas y mucho asfalto por delante.',
   'ARCADE',
   'cover-frogger',
-  'lime'
+  'green'
 );
 ```
 
@@ -80,7 +80,7 @@ No se introducen nuevas tablas ni tipos TypeScript — se reutilizan `GameRow` y
 ## Implementation plan
 
 1. **INSERT en Supabase** — ejecutar el SQL del data model en el SQL Editor de Supabase.
-   Verificación: la fila `frogger` aparece en el Table Editor; `/games` muestra la card con cover `cover-frogger` y color `lime`.
+   Verificación: la fila `frogger` aparece en el Table Editor; `/games` muestra la card con cover `cover-frogger` y color `green`.
 
 2. **Definir constantes y tipos** dentro de `FroggerGame.tsx`:
 
@@ -184,7 +184,7 @@ No se introducen nuevas tablas ni tipos TypeScript — se reutilizan `GameRow` y
 ## Acceptance criteria
 
 - [ ] La fila `frogger` existe en la tabla `games` de Supabase con los valores del data model.
-- [ ] La card de Frogger aparece en `/games` con cover `cover-frogger` y color `lime`.
+- [ ] La card de Frogger aparece en `/games` con cover `cover-frogger` y color `green`.
 - [ ] La ruta `/games/frogger/play` carga sin errores de SSR ni de TypeScript.
 - [ ] El canvas (640 × 560) se renderiza con las tres zonas visualmente diferenciadas (carretera, río, zonas seguras, bocas destino).
 - [ ] La rana aparece centrada en la fila de inicio al cargar la partida.
