@@ -23,6 +23,8 @@ No test runner configured.
 
 Usa siempre `/frontend-design` para diseñar la interfaz de usuario.
 
+- `/spec-impl-game <NN-spec-name>` (`.claude/skills/spec-impl-game/SKILL.md`) — implementa un spec de juego aprobado con el mismo flujo que `/spec-impl` (valida estado Aprobado, crea rama, implementa paso a paso) y, tras confirmar los criterios de aceptación, encadena automáticamente `skin-designer` → `mobile-porter` en secuencia estricta (nunca en paralelo) sobre el juego recién implementado.
+
 ## Agentes
 
 - **`game-planner`** (`.claude/agents/game-planner.md`) — planifica y sugiere el próximo juego a implementar. Lee el catálogo actual, evalúa candidatos por diversidad de género, factibilidad en canvas 2D y reconocimiento clásico, y mantiene una memoria persistente de sugerencias en `references/game-suggestions-todo.md`. Úsalo cuando el usuario pregunte qué juego sigue o pida ideas.

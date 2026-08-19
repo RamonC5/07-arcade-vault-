@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { UserProvider } from "./context/UserContext";
 import Nav from "@/components/Nav";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export const metadata: Metadata = {
   title: "Arcade Vault",
@@ -17,8 +18,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="min-h-full flex flex-col">
         <UserProvider>
-          <div className="av-bg" />
-          <div className="av-noise" />
+          <AnimatedBackground />
           <Nav />
           <main className="av-main" style={{ position: 'relative', zIndex: 2 }}>{children}</main>
           <footer style={{ borderTop: '1px solid var(--line)', padding: '20px 32px', textAlign: 'center', color: 'var(--ink-faint)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em' }}>
